@@ -20,6 +20,23 @@ namespace ShoppingList.Controllers {
             _dbContext.SaveChanges();
             return RedirectToAction("Index","Item");
         }
+        public IActionResult DeleteOnClick(int? id) {
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            Item i = _dbContext.Items.FirstOrDefault(i => i.Id == id);
+
+            if (i != null)
+            {
+                _dbContext.Remove(i);
+                _dbContext.SaveChanges();
+            }
+
+            return RedirectToAction("Index", "Item");
+        }
 
     }
 }

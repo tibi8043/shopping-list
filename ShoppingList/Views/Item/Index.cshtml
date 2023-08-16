@@ -5,28 +5,26 @@
 @{
 }
 <h1>Here is your shopping list</h1>
-<a class="btn btn-primary" asp-action="Index" asp-controller="ManageItem" >Add Item</a>
+<a class="btn btn-primary" asp-action="Index" asp-controller="ManageItem">Add Item</a>
 <div class="container">
     <div class="row">
-        @foreach(var item in Model){
-            @if (item.IsDone)
-            {
+        @foreach (var item in Model) {
+            @if (item.IsDone) {
                 <div class="card m-2" style="width: 18rem; opacity: 50%;">
                     <a href="" class="btn text-start mb-2 p-0">
                         <div class="card-body">
-                            <h5 class="card-title">@item.Title    <i class=" float-end fa-solid fa-check"></i></h5>
+                            <h5 class="card-title">@item.Title <i class=" float-end fa-solid fa-check"></i></h5>
                             <p class="card-text text-muted m-0">@item.Description</p>
                             <p class="card-text  ">From here: @item.FromWhere</p>
                         </div>
                     </a>
                     <div class="d-flex flex-column align-items-center">
-                        <a href="#" class="btn btn-primary mb-2 w-75 disabled">Edit</a>
-                        <a href="#" class="btn btn-danger mb-2 w-75">Delete</a>
+                        <button href="#" class="btn btn-primary mb-2 w-75 disabled">Edit</button>
+                        <button asp-route-id="@item.Id" asp-action="DeleteOnClick" asp-controller="ManageItem" class="btn btn-danger mb-2 w-75">Delete</button>
                     </div>
                 </div>
             }
-            else
-            {
+            else {
                 <div class="card m-2" style="width: 18rem;">
                     <a href="#" class="btn text-start mb-2 p-0">
                         <div class="card-body">
@@ -36,8 +34,8 @@
                         </div>
                     </a>
                     <div class="d-flex flex-column align-items-center">
-                    <a href="#" class="btn btn-primary mb-2 w-75">Edit</a>
-                    <a href="#" class="btn btn-danger mb-2 w-75">Delete</a>
+                        <a href="#" class="btn btn-primary mb-2 w-75">Edit</a>
+                        <a asp-route-id="@item.Id" asp-action="DeleteOnClick" asp-controller="ManageItem" class="btn btn-danger mb-2 w-75">Delete</a>
                     </div>
                 </div>
             }
