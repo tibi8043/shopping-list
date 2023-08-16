@@ -14,6 +14,7 @@ namespace ShoppingList.Controllers {
             List<Item> items = _dbContext.Items.ToList();
             return View(items);
         }
+        
 
     }
 }
