@@ -4,38 +4,55 @@
 *@
 @{
 }
-<h1>Here is your shopping list</h1>
-<a class="btn btn-primary" asp-action="Index" asp-controller="ManageItem">Add Item</a>
-<div class="container">
-    <div class="row">
+<div class="d-flex flex-row justify-content-between align-items-center">
+    <h1>Here is your shopping list</h1>
+
+    <div>
+        <a class="btn btn-primary fw-bolder" asp-action="Index" asp-controller="ManageItem">Add Item</a>
+    </div>
+</div>
+<div class="container mt-3 p-0">
+    <div class="row d-flex justify-content-center p-0">
         @foreach (var item in Model) {
             @if (item.IsDone) {
-                <div class="card m-2" style="width: 18rem; opacity: 50%;">
-                    <a href="" class="btn text-start mb-2 p-0">
-                        <div class="card-body">
-                            <h5 class="card-title">@item.Title <i class=" float-end fa-solid fa-check"></i></h5>
-                            <p class="card-text text-muted m-0">@item.Description</p>
-                            <p class="card-text  ">From here: @item.FromWhere</p>
+                <div class="card myCard m-2 p-0">
+                    <a asp-action="DoneOnClick" asp-route-id="@item.Id" asp-controller="ManageItem" class="btn text-start mb-2 p-0">
+                        <div class="done">
+                            <div class="card-body">
+                                <div class="hideScrollbar cardTitle card-title ">@item.Title <i class=" float-end fa-solid fa-check"></i></div>
+                                <hr>
+                                <div class="hideScrollbar cardDescription card-text text-muted m-0">@item.Description</div>
+                                <div class="hideScrollbar cardFromWhere "> From here: @item.FromWhere</div>
+                            </div>
                         </div>
                     </a>
                     <div class="d-flex flex-column align-items-center">
-                        <button href="#" class="btn btn-primary mb-2 w-75 disabled">Edit</button>
-                        <button asp-route-id="@item.Id" asp-action="DeleteOnClick" asp-controller="ManageItem" class="btn btn-danger mb-2 w-75">Delete</button>
+                        <a asp-route-id="@item.Id" asp-action="Edit" asp-controller="ManageItem" class="btn btn-primary mb-2 w-75 disabled">Edit</a>
+                        <a asp-route-id="@item.Id" asp-action="DeleteOnClick" asp-controller="ManageItem" class="btn btn-danger mb-2 w-75">Delete</a>
+                    </div>
+                    <div class="done card-footer fst-italic ">
+                        <span>@item.CreateDate</span>
                     </div>
                 </div>
             }
             else {
-                <div class="card m-2" style="width: 18rem;">
-                    <a href="#" class="btn text-start mb-2 p-0">
+                <div class="card myCard m-2 p-0">
+                    <a asp-action="DoneOnClick" asp-route-id="@item.Id" asp-controller="ManageItem" class="btn text-start mb-2 p-0">
+
                         <div class="card-body">
-                            <h5 class="card-title">@item.Title</h5>
-                            <p class="card-text text-muted m-0">@item.Description</p>
-                            <p class="card-text  ">From here: @item.FromWhere</p>
+                            <div class="hideScrollbar cardTitle card-title ">@item.Title</div>
+                            <hr>
+                            <div class="hideScrollbar cardDescription card-text text-muted m-0">@item.Description</div>
+
+                            <div class="hideScrollbar cardFromWhere "> From here: @item.FromWhere</div>
                         </div>
                     </a>
                     <div class="d-flex flex-column align-items-center">
-                        <a href="#" class="btn btn-primary mb-2 w-75">Edit</a>
+                        <a asp-route-id="@item.Id" asp-action="Edit" asp-controller="ManageItem" class="btn btn-primary mb-2 w-75">Edit</a>
                         <a asp-route-id="@item.Id" asp-action="DeleteOnClick" asp-controller="ManageItem" class="btn btn-danger mb-2 w-75">Delete</a>
+                    </div>
+                    <div class="card-footer fst-italic">
+                        <span>@item.CreateDate</span>
                     </div>
                 </div>
             }

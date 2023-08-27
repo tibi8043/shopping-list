@@ -1,0 +1,28 @@
+﻿@model Item
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1>Edit </h1>
+
+<form class="from-controll " method="post" asp-action="Edit">
+    <div class="mb-3">
+        <label class="form-label" asp-for="Title">Title</label>
+        <input type="text" class="form-control" asp-for="Title" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label" asp-for="Description">Description</label>
+        <input type="text" class="form-control" asp-for="Description" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label" asp-for="FromWhere">From Here</label>
+        <input type="text" class="form-control" asp-for="FromWhere" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label" asp-for="IsDone" >Done:</label>        
+        <input type="checkbox" asp-for="IsDone" />
+    </div>
+    <button type="submit" class="btn btn-success">Update</button>
+    <a class="btn btn-info " asp-action="Index" asp-controller="Item">Go back</a>
+</form>

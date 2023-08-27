@@ -12,8 +12,8 @@ using ShoppingList.Data;
 namespace ShoppingList.Data.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20230820082843_requiredClassPorps")]
-    partial class requiredClassPorps
+    [Migration("20230822184054_GitRevertsv2")]
+    partial class GitRevertsv2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

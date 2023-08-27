@@ -5,7 +5,7 @@
 namespace ShoppingList.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class UpdateUserContextv82 : Migration
+    public partial class GitRevertsv2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

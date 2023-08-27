@@ -19,4 +19,8 @@
     <Folder Include="Data\Migrations\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\css\item.css" />
+  </ItemGroup>
+
 </Project>

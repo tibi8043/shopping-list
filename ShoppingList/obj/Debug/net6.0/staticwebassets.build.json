@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+AuEu4SwEwwMIOO+P5VEZJivs/OGFx692rl6V3xvXU0=",
+  "Hash": "MKddW4dz6WKWKwjepTibB6GCo1h4PAN0lVzLrUMQGN0=",
   "Source": "ShoppingList",
   "BasePath": "_content/ShoppingList",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\tibor\\Desktop\\ShoppingList\\ShoppingList\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\ShoppingList.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\tibor\\Desktop\\ShoppingList\\ShoppingList\\wwwroot\\css\\item.css",
+      "SourceId": "ShoppingList",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\tibor\\Desktop\\ShoppingList\\ShoppingList\\wwwroot\\",
+      "BasePath": "_content/ShoppingList",
+      "RelativePath": "css/item.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\item.css"
     },
     {
       "Identity": "C:\\Users\\tibor\\Desktop\\ShoppingList\\ShoppingList\\wwwroot\\css\\site.css",

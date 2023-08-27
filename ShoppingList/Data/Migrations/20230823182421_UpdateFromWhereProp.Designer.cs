@@ -12,8 +12,8 @@ using ShoppingList.Data;
 namespace ShoppingList.Data.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20230820083222_requiredClassPorpsFixed")]
-    partial class requiredClassPorpsFixed
+    [Migration("20230823182421_UpdateFromWhereProp")]
+    partial class UpdateFromWhereProp
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -37,18 +37,20 @@ namespace ShoppingList.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(110)
+                        .HasColumnType("nvarchar(110)");
 
                     b.Property<string>("FromWhere")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(60)
+                        .HasColumnType("nvarchar(60)");
 
                     b.Property<bool>("IsDone")
                         .HasColumnType("bit");
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
 
                     b.HasKey("Id");
 

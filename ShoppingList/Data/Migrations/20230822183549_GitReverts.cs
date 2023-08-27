@@ -5,7 +5,7 @@
 namespace ShoppingList.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class requiredClassPorps : Migration
+    public partial class GitReverts : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

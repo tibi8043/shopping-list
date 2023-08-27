@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\ShoppingList.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\tibor\\Desktop\\ShoppingList\\ShoppingList\\wwwroot\\css\\item.css",
+      "PackagePath": "staticwebassets\\css\\item.css"
+    },
+    {
       "Id": "C:\\Users\\tibor\\Desktop\\ShoppingList\\ShoppingList\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
