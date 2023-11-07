@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using NToastNotify;
 using ShoppingList.Data;
 
 namespace ShoppingList {
@@ -10,6 +11,12 @@ namespace ShoppingList {
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<MyDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            builder.Services.AddRazorPages().AddNToastNotifyToastr(new ToastrOptions() {
+                ProgressBar = false,
+                PositionClass = ToastPositions.BottomRight
+            }) ;
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -26,6 +33,8 @@ namespace ShoppingList {
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseNToastNotify();
 
             app.MapControllerRoute(
                 name: "default",
